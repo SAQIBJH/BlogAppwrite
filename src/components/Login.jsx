@@ -6,14 +6,14 @@ import { useNavigate, Link } from "react-router-dom"
 import { Button, Input, Logo } from "./index"
 import {useForm} from "react-hook-form"
 function Login() {
-    console.log("hello login")
+    // console.log("hello login")
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { register, handleSubmit } = useForm();
     const [error, setError] = useState("");
 
     const loginUser = async (data) => {
-        console.log("first",data)
+        // console.log("first",data)
         setError("");
         try {
             const session = await authService.login(data);

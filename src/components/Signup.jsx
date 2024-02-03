@@ -12,7 +12,6 @@ function Signup() {
     const navigate = useNavigate()
     const { register, handleSubmit } = useForm();
     const SignupUser = async (data) => {
-        console.log("data",data)
         setError("")
         try {
             const userData = await authService.createAccount(data);

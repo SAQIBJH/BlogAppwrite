@@ -27,7 +27,7 @@ function Post() {
                 service.deleteFile(post.featuredImage);
                 navigate("/");
             }
-        })
+        })    
     }
     return post ? (
         <div className='py-8'>

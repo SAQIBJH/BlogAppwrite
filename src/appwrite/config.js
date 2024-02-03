@@ -12,8 +12,8 @@ export class Service{
     }
 // slug is used as a document ID
     async createPost({ title, slug, content, featuredImage, status, userId }) {
-        const token = this.client.headers['x-appwrite-session']
-        console.log('Authentication Token:', token);
+        // const token = this.client.headers['x-appwrite-session']
+        // console.log('Authentication Token:', token);
 
         try {
             return await this.databases.createDocument(

@@ -12,7 +12,7 @@ export class AuthService {
         try {
             const userAccount = await this.account.create(ID.unique(), email, password, name)
             if (userAccount) {
-                console.log("successfully registered")
+                
                 // call login method if user is successfully login
                 return this.login({ email, password })
             }
