@@ -8,13 +8,13 @@ function Allpost() {
     const { posts, loading } = useFetchPosts()
     if (posts.length === 0) {
         return (
-            <div className="w-full py-8 mt-4 text-center">
+            <div className=" flex h-72 w-full py-8 justify-center items-center">
                 <Container>
-                    <div className="flex flex-wrap">
-                        <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
-                                There is no post...
-                            </h1>
+                    <div className="flex flex-wrap max-h-72">
+                        <div className=" flex p-2 w-full justify-center items-center">
+                        
+                                <Spinner/>
+                            
                         </div>
                     </div>
                 </Container>
@@ -25,10 +25,10 @@ function Allpost() {
     return !loading ? (
         <div className='w-full py-8'>
             <Container>
-                <div>
+                <div className=' flex flex-wrap w-full py-8'>
                     {
                         posts && posts.map(post => (
-                            <div key={post.$id} className='p-2 w-1/4'>
+                            <div key={post.$id} className='p-5 w-1/5'>
                                 <PostCard {...post}/>
                             </div>
                         ))

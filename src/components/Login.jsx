@@ -6,7 +6,6 @@ import { useNavigate, Link } from "react-router-dom"
 import { Button, Input, Logo } from "./index"
 import {useForm} from "react-hook-form"
 function Login() {
-    // console.log("hello login")
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { register, handleSubmit } = useForm();
