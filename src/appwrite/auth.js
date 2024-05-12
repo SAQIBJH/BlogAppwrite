@@ -4,7 +4,9 @@ export class AuthService {
     client = new Client();
     account;
     constructor() {
-        this.client.setEndpoint(conf.appwriteUrl).setProject(conf.appwriteProjectID);
+        this.client
+            .setEndpoint(conf.appwriteUrl)
+            .setProject(conf.appwriteProjectID);
         this.account = new Account(this.client);
     }
 
@@ -47,6 +49,8 @@ export class AuthService {
         }
         return null;
     }
+
+    
 
     // to logout the user
     async logout() {

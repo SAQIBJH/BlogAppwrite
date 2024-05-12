@@ -9,6 +9,7 @@ function PostForm({ post }) {
     console.log("post : ", post)
     const navigate = useNavigate()
     const userData = useSelector(state => state.auth.userData)
+    console.log("userDtaa", userData)
     const { register, handleSubmit, setValue, getValues, watch, control } = useForm({
 
         defaultValues: {
@@ -37,6 +38,7 @@ function PostForm({ post }) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
                 data.userId = userData.$id
+                data.username = userData.name;
                 const dbPost = await service.createPost({ ...data});
                 console.log(dbPost)
                 console.log("dbPost")

@@ -10,6 +10,7 @@ function useFetchPosts() {
           try {
               service.getPosts([]).then(post => {
                   if (post) setPosts(post.documents);
+                  
             })
           } catch (error) {
               console.log('Fetch Posts Error:', error)
@@ -24,6 +25,7 @@ function useFetchPosts() {
     }, [])
     
     
+    console.log("posts : ", posts)
     return { posts, loading };
 }
 

@@ -33,6 +33,7 @@ function Post() {
         <div className='py-8'>
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+                    {/* <span>By: {userData?.name }</span> */}
                     <img
                         src={service.getFilePreview(post.featuredImage)}
                         alt={post.title}
@@ -56,6 +57,7 @@ function Post() {
                 <div className='w-full h-auto max-h-80 object-cover rounded-xl border bg-slate-50 p-2 m-2'>
 
                     <div className='w-full mb-6'>
+                        <span>By : {post?.username}</span>
                         <h1 className="text-2xl font-bold">{post.title}</h1>
 
                     </div>

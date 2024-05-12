@@ -3,9 +3,11 @@ import useFetchPosts from '../useFetchPosts'
 import Container from '../container/Container'
 import PostCard from '../PostCard'
 import Spinner from '../Spinner';
+import { useSelector } from 'react-redux';
 
 function Allpost() {
-    const { posts, loading } = useFetchPosts()
+    const { posts, loading } = useFetchPosts();
+    // const userData = useSelector(state => state.auth.userData)
     if (posts.length === 0) {
         return (
             <div className=" flex h-72 w-full py-8 justify-center items-center">
