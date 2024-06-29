@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import useFetchPosts from '../useFetchPosts'
 import Container from '../container/Container'
 import PostCard from '../PostCard'
 import Spinner from '../Spinner';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 function Allpost() {
     const { posts, loading } = useFetchPosts();
+    console.log("loading", loading);
+    
+    // const renderCount = useRef(0);
+
+    // useEffect(() => {
+    //     renderCount.current += 1;
+    //     console.log(`Allpost render count: ${renderCount.current}`);
+    // });
+    
     // const userData = useSelector(state => state.auth.userData)
-    if (posts.length === 0) {
+    if (loading) {
         return (
             <div className=" flex h-72 w-full py-8 justify-center items-center">
                 <Container>

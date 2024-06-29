@@ -4,7 +4,9 @@ import useFetchPosts from '../useFetchPosts';
 import Allpost from './Allpost';
 
 function Home() {
-    const {posts, loading} = useFetchPosts()
+    const {posts, loading} =  useFetchPosts()
+    
+
 
     if (posts.length === 0) {
         return (

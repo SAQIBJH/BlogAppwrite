@@ -31,7 +31,7 @@ export class Service {
         }
       );
     } catch (error) {
-      console.log("createPost error", error);
+      console.error("createPost error", error);
     }
   }
 
@@ -49,7 +49,7 @@ export class Service {
         }
       );
     } catch (error) {
-      console.log("Update Post :: error", error);
+      console.error("Update Post :: error", error);
     }
   }
 
@@ -62,7 +62,7 @@ export class Service {
       );
       return true;
     } catch (error) {
-      console.log("deletePost :: error", error);
+      console.error("deletePost :: error", error);
       return false;
     }
   }
@@ -75,7 +75,7 @@ export class Service {
         slug
       );
     } catch (error) {
-      console.log("getPost :: error", error);
+      console.error("getPost :: error", error);
       return false;
     }
   }
@@ -84,14 +84,18 @@ export class Service {
       queries = [Query.equal("status", "active"), Query.equal("userId", userId)]
     ) {
       try {
-        return await this.databases.listDocuments(
+        const response = await this.databases.listDocuments(
           conf.appwriteDatabaseID,
           conf.appwriteCollectionID,
           queries
+          
           );
+          return response;
+          
+
           
       } catch (error) {
-        console.log("getPosts :: error", error);
+        console.error("getPosts :: error", error);
       }
     }
 
@@ -133,7 +137,7 @@ export class Service {
         file
       );
     } catch (error) {
-      console.log("uploadFile :: error ", error);
+      console.error("uploadFile :: error ", error);
     }
   }
 
@@ -142,7 +146,7 @@ export class Service {
       await this.bucket.deleteFile(conf.appwriteBucketID, fileId);
       return true;
     } catch (error) {
-      console.log("deleteFile :: error ", error);
+      console.error("deleteFile :: error ", error);
       return false;
     }
   }
@@ -151,7 +155,7 @@ export class Service {
     try {
       return this.bucket.getFilePreview(conf.appwriteBucketID, fileId);
     } catch (error) {
-      console.log("getFilePreview :: error ", error);
+      console.error("getFilePreview :: error ", error);
     }
   }
 }
