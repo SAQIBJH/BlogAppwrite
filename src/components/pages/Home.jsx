@@ -8,7 +8,7 @@ function Home() {
     
 
 
-    if (posts.length === 0) {
+    if (!loading && posts.length === 0) {
         return (
             <div className="w-full py-8 mt-4 text-center max-h-full">
                 <Container>
